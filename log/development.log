@@ -44,3 +44,516 @@ FOREIGN KEY ("airline_id")
   [1m[36mAirline Load (0.6ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" ORDER BY "airlines"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mAirline Load (0.9ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" ORDER BY "airlines"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[35m (39.1ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+Started GET "/" for ::1 at 2020-09-18 20:06:37 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 4966ms (Views: 4946.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/airlines" for ::1 at 2020-09-18 20:06:56 -0500
+  
+SyntaxError (/Users/iNjaro/Sites/Rails_Apps/airliners/airliners/app/controllers/api/v1/airlines_controller.rb:58: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/airlines_controller.rb:58: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/airlines" for ::1 at 2020-09-18 20:07:47 -0500
+Processing by Api::V1::AirlinesController#index as HTML
+  [1m[36mAirline Load (2.2ms)[0m  [1m[34mSELECT "airlines".* FROM "airlines"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+Completed 200 OK in 247ms (Views: 0.4ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/api/v1/airlines/united-airlines" for ::1 at 2020-09-18 20:10:50 -0500
+Processing by Api::V1::AirlinesController#show as HTML
+  Parameters: {"slug"=>"united-airlines"}
+  [1m[36mAirline Load (0.5ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "united-airlines"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/airlines/united-airlines/1" for ::1 at 2020-09-18 20:11:24 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"api/v1/airlines/united-airlines/1"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/airlines/united-airlines/" for ::1 at 2020-09-18 20:11:30 -0500
+Processing by Api::V1::AirlinesController#show as HTML
+  Parameters: {"slug"=>"united-airlines"}
+  [1m[36mAirline Load (0.3ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "united-airlines"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/airline/1" for ::1 at 2020-09-18 20:12:00 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"api/v1/airline/1"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/airlines" for ::1 at 2020-09-18 20:12:07 -0500
+Processing by Api::V1::AirlinesController#index as HTML
+  [1m[36mAirline Load (0.8ms)[0m  [1m[34mSELECT "airlines".* FROM "airlines"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/airlines/2" for ::1 at 2020-09-18 20:12:14 -0500
+Processing by Api::V1::AirlinesController#show as HTML
+  Parameters: {"slug"=>"2"}
+  [1m[36mAirline Load (0.4ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "2"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/airline/2" for ::1 at 2020-09-18 20:12:25 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"api/v1/airline/2"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/airlines/new" for ::1 at 2020-09-18 20:12:46 -0500
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for Api::V1::AirlinesController):
+  
+actionpack (5.1.7) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.7) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.7) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.7) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/reviewa" for ::1 at 2020-09-18 20:13:32 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"api/v1/reviewa"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/reviews" for ::1 at 2020-09-18 20:13:38 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"api/v1/reviews"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 49ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/reviews.json" for ::1 at 2020-09-18 20:13:54 -0500
+Processing by PagesController#index as JSON
+  Parameters: {"path"=>"api/v1/reviews"}
+Completed 406 Not Acceptable in 120ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (PagesController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.1.7) lib/action_controller/metal/implicit_render.rb:40:in `default_render'
+actionpack (5.1.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.7) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.7) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.7) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.7) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.7) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.7) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.7) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.7) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.7) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.7) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.7) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.7) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.7) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/airlines.json" for ::1 at 2020-09-18 20:14:38 -0500
+Processing by Api::V1::AirlinesController#index as JSON
+  [1m[36mAirline Load (0.6ms)[0m  [1m[34mSELECT "airlines".* FROM "airlines"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/v1/airlines.json%7B%20%22name%22:%20%22fake%20airline%22%7D" for ::1 at 2020-09-18 20:15:54 -0500
+Processing by Api::V1::AirlinesController#index as 
+  [1m[36mAirline Load (0.5ms)[0m  [1m[34mSELECT "airlines".* FROM "airlines"[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[35m (14.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[36mReview Load (4.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+  [1m[36mReview Load (4.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+Completed 200 OK in 65ms (Views: 1.1ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/api/v1/airlines.json" for ::1 at 2020-09-19 22:04:27 -0500
+Processing by Api::V1::AirlinesController#index as JSON
+  [1m[36mAirline Load (0.3ms)[0m  [1m[34mSELECT "airlines".* FROM "airlines"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+Completed 200 OK in 106ms (Views: 0.3ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/api/v1/airlines.json" for ::1 at 2020-09-19 22:05:28 -0500
+Processing by Api::V1::AirlinesController#index as JSON
+  [1m[36mAirline Load (0.6ms)[0m  [1m[34mSELECT "airlines".* FROM "airlines"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 6]]
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/v1/airlines/united-airlines.json" for ::1 at 2020-09-19 22:09:24 -0500
+Processing by Api::V1::AirlinesController#show as JSON
+  Parameters: {"slug"=>"united-airlines"}
+  [1m[36mAirline Load (0.3ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "united-airlines"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/airlines/united-airlines.json?name=fake%20airline" for ::1 at 2020-09-19 22:11:41 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/airlines/united-airlines.json"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/v1/airlines.json?name=fake%20airline" for ::1 at 2020-09-19 22:12:12 -0500
+Processing by Api::V1::AirlinesController#create as JSON
+  Parameters: {"name"=>"fake airline"}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `airline_params' for #<Api::V1::AirlinesController:0x007f910e5a7408>
+Did you mean?  airlines_params):
+  
+app/controllers/api/v1/airlines_controller.rb:20:in `create'
+Started POST "/api/v1/airlines.json?name=fake%20airline" for ::1 at 2020-09-19 22:13:26 -0500
+Processing by Api::V1::AirlinesController#create as JSON
+  Parameters: {"name"=>"fake airline"}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: airline):
+  
+app/controllers/api/v1/airlines_controller.rb:54:in `airlines_params'
+app/controllers/api/v1/airlines_controller.rb:20:in `create'
+Started POST "/api/v1/airlines.json?name=%22fake%20airline%22" for ::1 at 2020-09-19 22:17:12 -0500
+Processing by Api::V1::AirlinesController#create as JSON
+  Parameters: {"name"=>"\"fake airline\""}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: airline):
+  
+app/controllers/api/v1/airlines_controller.rb:54:in `airlines_params'
+app/controllers/api/v1/airlines_controller.rb:20:in `create'
+Started POST "/api/v1/airlines.json?%22name%22=%22fake%20airline%22" for ::1 at 2020-09-19 22:18:30 -0500
+Processing by Api::V1::AirlinesController#create as JSON
+  Parameters: {"\"name\""=>"\"fake airline\""}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: airline):
+  
+app/controllers/api/v1/airlines_controller.rb:54:in `airlines_params'
+app/controllers/api/v1/airlines_controller.rb:20:in `create'
+Started POST "/api/v1/airlines.json?%22name%22=%22fake%20airline%22" for ::1 at 2020-09-19 22:19:49 -0500
+Processing by Api::V1::AirlinesController#create as JSON
+  Parameters: {"\"name\""=>"\"fake airline\""}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: airline):
+  
+app/controllers/api/v1/airlines_controller.rb:54:in `airline_params'
+app/controllers/api/v1/airlines_controller.rb:20:in `create'
+Started POST "/api/v1/airlines.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-19 22:21:55 -0500
+Processing by Api::V1::AirlinesController#create as JSON
+  Parameters: {"\"name\""=>"\"fake-airline\""}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: airline):
+  
+app/controllers/api/v1/airlines_controller.rb:54:in `airline_params'
+app/controllers/api/v1/airlines_controller.rb:20:in `create'
+Started POST "/api/v1/airlines.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-19 22:24:52 -0500
+Processing by Api::V1::AirlinesController#create as JSON
+  Parameters: {"name"=>"fake airline", "\"name\""=>"\"fake-airline\"", "airline"=>{"name"=>"fake airline"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "airlines" ("name", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fake airline"], ["slug", "fake-airline"], ["created_at", "2020-09-20 03:24:52.761373"], ["updated_at", "2020-09-20 03:24:52.761373"]]
+  [1m[35m (26.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 7]]
+Completed 200 OK in 292ms (Views: 0.3ms | ActiveRecord: 37.5ms)
+
+
+Started GET "/api/v1/airlines/fake-airlines.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-19 22:25:24 -0500
+Processing by Api::V1::AirlinesController#show as JSON
+  Parameters: {"name"=>"fake airline", "\"name\""=>"\"fake-airline\"", "slug"=>"fake-airlines", "airline"=>{"name"=>"fake airline"}}
+  [1m[36mAirline Load (0.3ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "fake-airlines"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/airlines/fake-airline.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-19 22:25:28 -0500
+Processing by Api::V1::AirlinesController#show as JSON
+  Parameters: {"name"=>"fake airline", "\"name\""=>"\"fake-airline\"", "slug"=>"fake-airline", "airline"=>{"name"=>"fake airline"}}
+  [1m[36mAirline Load (0.5ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "fake-airline"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 7]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 7]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/api/v1/airlines/fake-airline.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-19 22:29:26 -0500
+Processing by Api::V1::AirlinesController#update as JSON
+  Parameters: {"name"=>"lite airline", "\"name\""=>"\"fake-airline\"", "slug"=>"fake-airline", "airline"=>{"name"=>"lite airline"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAirline Load (0.2ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "fake-airline"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (43.2ms)[0m  [1m[33mUPDATE "airlines" SET "name" = $1, "updated_at" = $2 WHERE "airlines"."id" = $3[0m  [["name", "lite airline"], ["updated_at", "2020-09-20 03:29:26.153304"], ["id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 7]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 7]]
+Completed 200 OK in 52ms (Views: 0.2ms | ActiveRecord: 44.9ms)
+
+
+Started DELETE "/api/v1/airlines/fake-airline.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-19 22:30:05 -0500
+Processing by Api::V1::AirlinesController#destroy as JSON
+  Parameters: {"name"=>"lite airline", "\"name\""=>"\"fake-airline\"", "slug"=>"fake-airline", "airline"=>{"name"=>"lite airline"}}
+Can't verify CSRF token authenticity.
+  [1m[36mAirline Load (0.3ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "fake-airline"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (65.0ms)[0m  [1m[31mDELETE FROM "airlines" WHERE "airlines"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 70ms (ActiveRecord: 66.1ms)
+
+
+Started POST "/api/v1/reviews.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-20 20:20:08 -0500
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"airline_id"=>"1", "title"=>"Good experience!", "description"=>"Good customer service, solid wi-fi!", "score"=>"3", "\"name\""=>"\"fake-airline\"", "review"=>{"title"=>"Good experience!", "description"=>"Good customer service, solid wi-fi!", "score"=>"3", "airline_id"=>"1"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAirline Load (0.5ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (16.6ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "description", "score", "airline_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Good experience!"], ["description", "Good customer service, solid wi-fi!"], ["score", 3], ["airline_id", 1], ["created_at", "2020-09-21 01:20:08.876168"], ["updated_at", "2020-09-21 01:20:08.876168"]]
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 139ms (Views: 0.3ms | ActiveRecord: 43.8ms)
+
+
+Started GET "/api/v1/airlines/united-airlines.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-20 20:24:18 -0500
+Processing by Api::V1::AirlinesController#show as JSON
+  Parameters: {"airline_id"=>"1", "title"=>"Good experience!", "description"=>"Good customer service, solid wi-fi!", "score"=>"3", "\"name\""=>"\"fake-airline\"", "slug"=>"united-airlines", "airline"=>{}}
+  [1m[36mAirline Load (0.4ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "united-airlines"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/airlines/united-airlines.json?%22name%22=%22fake-airline%22" for ::1 at 2020-09-20 20:24:18 -0500
+Processing by Api::V1::AirlinesController#show as JSON
+  Parameters: {"airline_id"=>"1", "title"=>"Good experience!", "description"=>"Good customer service, solid wi-fi!", "score"=>"3", "\"name\""=>"\"fake-airline\"", "slug"=>"united-airlines", "airline"=>{}}
+  [1m[36mAirline Load (0.2ms)[0m  [1m[34mSELECT  "airlines".* FROM "airlines" WHERE "airlines"."slug" = $1 LIMIT $2[0m  [["slug", "united-airlines"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."airline_id" = $1[0m  [["airline_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
